@@ -1,6 +1,7 @@
-part of '../fading_collections.dart';
+part of '../fading_scrollables.dart';
 
-extension FadingGridView on GridView {
+extension FadingListView on ListView {
+  /// Fades the top and/or bottom of the ListView.
   Widget fade({
     final double gradientSize = 20.0,
     bool top = true,
@@ -9,13 +10,13 @@ extension FadingGridView on GridView {
   }) {
     assert(controller != null);
 
-    return _FadingCollectionShader(
+    return _FadingScrollableShader(
       top: top,
       bottom: bottom,
       gradientSize: gradientSize,
+      controller: controller!,
       reverse: reverse,
       scrollDirection: scrollDirection,
-      controller: controller!,
       frameRate: frameRate,
       child: this,
     );

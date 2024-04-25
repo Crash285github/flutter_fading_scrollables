@@ -1,4 +1,4 @@
-part of '../fading_collections.dart';
+part of '../fading_scrollables.dart';
 
 extension FadingSingleChildScrollView on SingleChildScrollView {
   Widget fade({
@@ -9,7 +9,7 @@ extension FadingSingleChildScrollView on SingleChildScrollView {
   }) {
     assert(controller != null);
 
-    return _FadingCollectionShader(
+    return _FadingScrollableShader(
       top: top,
       bottom: bottom,
       gradientSize: gradientHeight,

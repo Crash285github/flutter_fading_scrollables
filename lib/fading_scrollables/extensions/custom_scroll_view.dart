@@ -1,4 +1,4 @@
-part of '../fading_collections.dart';
+part of '../fading_scrollables.dart';
 
 extension FadingCustomScrollView on CustomScrollView {
   Widget fade({
@@ -11,7 +11,7 @@ extension FadingCustomScrollView on CustomScrollView {
   }) {
     assert(controller != null);
 
-    return _FadingCollectionShader(
+    return _FadingScrollableShader(
       top: top,
       bottom: bottom,
       gradientSize: gradientSize,

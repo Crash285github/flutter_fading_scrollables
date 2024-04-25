@@ -1,4 +1,4 @@
-import 'package:fading_collections/fading_collections/fading_collections.dart';
+import 'package:fading_collections/fading_scrollables/fading_scrollables.dart';
 import 'package:fading_collections/pages/custom_scroll_view_page.dart';
 import 'package:fading_collections/pages/dss.dart';
 import 'package:fading_collections/pages/grid_view_page.dart';

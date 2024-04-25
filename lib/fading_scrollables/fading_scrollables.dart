@@ -33,5 +33,5 @@ part 'shader.dart';
 void setDefaultFrameRate(final int frameRate) {
   assert(frameRate > 0, 'Frame rate must be greater than 0.');
   assert(frameRate <= 1000, 'Frame rate must be less than 1000.');
-  _FadingCollectionShader.defaultFrameRate = frameRate;
+  _FadingScrollableShader.defaultFrameRate = frameRate;
 }

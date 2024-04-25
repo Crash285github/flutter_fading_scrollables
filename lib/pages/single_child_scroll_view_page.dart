@@ -1,4 +1,4 @@
-import 'package:fading_collections/fading_collections/fading_collections.dart';
+import 'package:fading_collections/fading_scrollables/fading_scrollables.dart';
 import 'package:flutter/material.dart';
 
 class SingleChildScrollViewPage extends StatefulWidget {

@@ -1,6 +1,6 @@
-part of 'fading_collections.dart';
+part of 'fading_scrollables.dart';
 
-class _FadingCollectionShader extends StatefulWidget {
+class _FadingScrollableShader extends StatefulWidget {
   /// The default frame rate for all the shaders.
   static int defaultFrameRate = 60;
 
@@ -34,7 +34,7 @@ class _FadingCollectionShader extends StatefulWidget {
   /// The frame rate for the shader instance.
   final int? frameRate;
 
-  const _FadingCollectionShader({
+  const _FadingScrollableShader({
     required this.controller,
     required this.top,
     required this.bottom,
@@ -59,11 +59,11 @@ class _FadingCollectionShader extends StatefulWidget {
         );
 
   @override
-  State<_FadingCollectionShader> createState() =>
-      _FadingCollectionShaderState();
+  State<_FadingScrollableShader> createState() =>
+      _FadingScrollableShaderState();
 }
 
-class _FadingCollectionShaderState extends State<_FadingCollectionShader> {
+class _FadingScrollableShaderState extends State<_FadingScrollableShader> {
   /// The size of the gradient at the start of the scrollable.
   double startGradientSize = 0.0;
 
@@ -100,7 +100,7 @@ class _FadingCollectionShaderState extends State<_FadingCollectionShader> {
   /// The duration between each refresh.
   Duration get refreshDuration => Duration(
         milliseconds: 1000 ~/
-            (widget.frameRate ?? _FadingCollectionShader.defaultFrameRate),
+            (widget.frameRate ?? _FadingScrollableShader.defaultFrameRate),
       );
 
   @override
