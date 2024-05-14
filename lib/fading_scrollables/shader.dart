@@ -117,13 +117,6 @@ class _FadingScrollableShaderState extends State<_FadingScrollableShader> {
     });
   }
 
-  @override
-  void dispose() {
-    _scrollController.dispose();
-
-    super.dispose();
-  }
-
   /// Whether the scrollable is vertical or horizontal.
   bool get _isVertical => widget.scrollDirection == Axis.vertical;
 
