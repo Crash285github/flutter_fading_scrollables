@@ -3,15 +3,15 @@ part of '../fading_scrollables.dart';
 extension FadingGridView on GridView {
   Widget fade({
     final double gradientSize = 20.0,
-    bool top = true,
-    bool bottom = true,
+    bool startFade = true,
+    bool endFade = true,
     int? frameRate,
   }) {
     assert(controller != null);
 
     return _FadingScrollableShader(
-      startFade: top,
-      endFade: bottom,
+      startFade: startFade,
+      endFade: endFade,
       gradientSize: gradientSize,
       reverse: reverse,
       scrollDirection: scrollDirection,

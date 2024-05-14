@@ -3,8 +3,8 @@ part of '../fading_scrollables.dart';
 extension FadingCustomScrollView on CustomScrollView {
   Widget fade({
     final double gradientSize = 20.0,
-    bool top = true,
-    bool bottom = true,
+    bool startFade = true,
+    bool endFade = true,
     double startOffset = 0,
     double endOffset = 0,
     int? frameRate,
@@ -12,8 +12,8 @@ extension FadingCustomScrollView on CustomScrollView {
     assert(controller != null);
 
     return _FadingScrollableShader(
-      startFade: top,
-      endFade: bottom,
+      startFade: startFade,
+      endFade: endFade,
       gradientSize: gradientSize,
       reverse: reverse,
       scrollDirection: scrollDirection,

@@ -54,7 +54,7 @@ class _SingleChildScrollViewPageState extends State<SingleChildScrollViewPage> {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: children),
-        ).fade(gradientHeight: 50),
+        ).fade(gradientSize: 50),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
