@@ -10,8 +10,8 @@ extension FadingGridView on GridView {
     assert(controller != null);
 
     return _FadingScrollableShader(
-      top: top,
-      bottom: bottom,
+      startFade: top,
+      endFade: bottom,
       gradientSize: gradientSize,
       reverse: reverse,
       scrollDirection: scrollDirection,

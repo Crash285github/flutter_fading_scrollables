@@ -16,11 +16,11 @@ class _FadingScrollableShader extends StatefulWidget {
   /// The offset at which the gradient ends.
   final double endOffset;
 
-  /// Whether the top of the scrollable should fade.
-  final bool top;
+  /// Whether the start of the scrollable should fade.
+  final bool startFade;
 
-  /// Whether the bottom of the scrollable should fade.
-  final bool bottom;
+  /// Whether the end of the scrollable should fade.
+  final bool endFade;
 
   /// The child scrollable widget.
   final Widget child;
@@ -36,8 +36,8 @@ class _FadingScrollableShader extends StatefulWidget {
 
   const _FadingScrollableShader({
     required this.controller,
-    required this.top,
-    required this.bottom,
+    required this.startFade,
+    required this.endFade,
     required this.gradientSize,
     required this.child,
     this.reverse = false,
@@ -46,7 +46,7 @@ class _FadingScrollableShader extends StatefulWidget {
     this.endOffset = 0,
     this.frameRate,
   })  : assert(
-          top != false || bottom != false,
+          startFade != false || endFade != false,
           'At least one side must fade',
         ),
         assert(
@@ -84,8 +84,8 @@ class _FadingScrollableShaderState extends State<_FadingScrollableShader> {
       _scrollController.position.maxScrollExtent - _scrollController.offset,
     );
 
-    if ((widget.top && newStartGradientSize != startGradientSize) ||
-        (widget.bottom && newEndGradientSize != endGradientSize)) {
+    if ((widget.startFade && newStartGradientSize != startGradientSize) ||
+        (widget.endFade && newEndGradientSize != endGradientSize)) {
       if (mounted) {
         setState(
           () {
@@ -145,21 +145,21 @@ class _FadingScrollableShaderState extends State<_FadingScrollableShader> {
           begin: _begin,
           end: _end,
           colors: [
-            if (widget.top) ...[
+            if (widget.startFade) ...[
               const Color.fromARGB(255, 0, 0, 0),
               const Color.fromARGB(0, 0, 0, 0),
             ],
-            if (widget.bottom) ...[
+            if (widget.endFade) ...[
               const Color.fromARGB(0, 0, 0, 0),
               const Color.fromARGB(255, 0, 0, 0),
             ]
           ],
           stops: [
-            if (widget.top) ...[
+            if (widget.startFade) ...[
               0,
               _startStop / _rectSize(rect),
             ],
-            if (widget.bottom) ...[
+            if (widget.endFade) ...[
               1 - (_endStop / _rectSize(rect)),
               1,
             ]

@@ -10,8 +10,8 @@ extension FadingSingleChildScrollView on SingleChildScrollView {
     assert(controller != null);
 
     return _FadingScrollableShader(
-      top: top,
-      bottom: bottom,
+      startFade: top,
+      endFade: bottom,
       gradientSize: gradientHeight,
       reverse: reverse,
       scrollDirection: scrollDirection,

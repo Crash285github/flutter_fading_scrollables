@@ -11,8 +11,8 @@ extension FadingListView on ListView {
     assert(controller != null);
 
     return _FadingScrollableShader(
-      top: top,
-      bottom: bottom,
+      startFade: top,
+      endFade: bottom,
       gradientSize: gradientSize,
       controller: controller!,
       reverse: reverse,
